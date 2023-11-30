@@ -13,25 +13,23 @@ Comment.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
+        // name: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false,
+        // },
         description: {
             type: DataTypes.STRING,
             allowNull: false,
         },
         user_id: {
-            type: DataTypes.STRING,
-            allowNull: false,
+            type: DataTypes.INTEGER,
             references: {
                 model: 'user',
                 key: 'id'
             }
         },
         blog_id: {
-            type: DataTypes.STRING,
-            allowNull: false,
+            type: DataTypes.INTEGER,
             references: {
                 model: 'blog',
                 key: 'id'
