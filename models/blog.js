@@ -25,7 +25,7 @@ Blog.init({
             key: 'id'
         }
     },
-    destination: {
+    destination_id: {
         type: DataTypes.INTEGER,
         references: {
             model: 'destination',
