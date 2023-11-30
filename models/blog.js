@@ -24,6 +24,13 @@ Blog.init({
             model: 'user',
             key: 'id'
         }
+    },
+    destination: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'destination',
+            key: 'id'
+        }
     }
 }, {
     sequelize,
