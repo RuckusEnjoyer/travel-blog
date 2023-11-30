@@ -78,10 +78,12 @@ nav{
  }
 
  nav .search-bar input[type="search"] {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
     background: transparent;
     width: 30vw;
     margin-left: 1 rem;
-    color: white;
+    color: rgb(17, 16, 16);
 }
 
 nav .search-bar input[type="search"]::placeholder{
@@ -92,4 +94,48 @@ nav .search-bar input[type="search"]::placeholder{
 .logo {
     color: antiquewhite;
     font-size:35px;
+}
+
+.button{
+    color: antiquewhite;
+    cursor: pointer;
+}
+
+.button:hover{
+    color: brown;
+}
+
+.middle .feeds .feed{
+    align-items: center;
+    background: antiquewhite;
+    border-radius: 3%;
+    padding: 15;
+    margin: 1rem 0;
+    font: 0.85rem;
+    line-height: 1.5;
+}
+
+.middle .feed .head{
+    display: flex;
+    justify-content: space-between;
+}
+
+.middle .feed .user{
+    display: flex;
+    gap: 1rem;
+}
+
+.middle .feed .phot.post{
+  border-radius: 3%;
+  overflow: hidden;
+  margin: 0.7rem;  
+}
+
+.post{
+width: 550px;
+border-radius: 3%;
+}
+
+.info{
+    background: antiquewhite;
 }
