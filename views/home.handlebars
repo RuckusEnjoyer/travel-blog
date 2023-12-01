@@ -1,0 +1,11 @@
+<section class="homediv">
+    <!--Map-->
+    <h2 class="info card">Welcome To Our Travel Blog!</h2>
+    <div id="map" class=""></div>
+    <p class="info card">Insert Description about our 'company' here</p>
+</section>
+<section class="homediv">
+    {{#each locations as |location|}}
+    {{> location}}
+    {{/each}}
+</section>

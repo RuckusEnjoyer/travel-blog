@@ -99,6 +99,7 @@ nav .search-bar input[type="search"]::placeholder{
 .button{
     color: antiquewhite;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .button:hover{
@@ -141,7 +142,27 @@ border-radius: 3%;
 }
 
 .signup-form, .login-form{
-
     padding: 10rem;
- 
+}
+
+
+/* Map CSS !DO NOT TOUCH! */
+.homediv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10vh;
+}
+
+.card {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#map { 
+    display: flex;
+    height: 30vh; 
+    Width: 80vw;
 }
