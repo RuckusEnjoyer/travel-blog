@@ -1,8 +1,8 @@
 const router = require('express').Router();
-const users = require('./users');
-const tags = require('./tags.js');
-const comments = require('./comments.js');
-const blogs = require('./blogs.js');
+const users = require('./usersRoute.js');
+const tags = require('./tagsRoute.js');
+const comments = require('./commentsRoute.js');
+const blogs = require('./blogsRoute.js');
 
 // router.use('/blogs', blogs);
 // router.use('/comments', comments);

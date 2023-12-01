@@ -140,7 +140,7 @@ border-radius: 3%;
     background: antiquewhite;
 }
 
-.signup-form{
+.signup-form, .login-form{
 
     padding: 10rem;
  
