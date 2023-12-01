@@ -99,6 +99,7 @@ nav .search-bar input[type="search"]::placeholder{
 .button{
     color: antiquewhite;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .button:hover{
@@ -145,3 +146,4 @@ border-radius: 3%;
     padding: 10rem;
  
 }
+#map { height: 180px; }

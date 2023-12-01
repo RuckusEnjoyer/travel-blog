@@ -7,6 +7,9 @@
     <title>Travel Blog</title>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins&family=Young+Serif&display=swap" rel="stylesheet">
@@ -19,9 +22,9 @@
         <h2 class="logo">
             Travel Blog
         </h2>
-        <div class="button" id="home">Home</div>
-        <div class="button" id="location">See Locations</div>
-        <div class="button" id="dashboard">Your dashboard</div>
+        <a href="/" class="button" id="home">Home</a>
+        <a href="/locations" class="button" id="location">See Locations</a>
+        <a href="/profile" class="button" id="dashboard">Your dashboard</a>
         <div class="search-bar">
             <i class="uil uil-search"></i>
             <input type="search" placeholder="Search for locations...">
@@ -33,9 +36,9 @@
             <div class="button"></div>
         
             {{#if loggedIn}}
-            <a href="/home">Logout</a>
+            <a class="button" href="/home">Logout</a>
             {{else}}
-            <a href="/login">Login</a>
+            <a class="button" href="/login">Login</a>
             {{/if}} 
         </div>
         </div>
@@ -43,5 +46,8 @@
     <div id="middle" class="feeds">
         {{{body}}}
     </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
 </body>
 </html>
