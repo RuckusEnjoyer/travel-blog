@@ -161,8 +161,12 @@ border-radius: 3%;
     border-radius: 10px;
 }
 
-#map { 
+.home-map{
     display: flex;
     height: 30vh; 
     Width: 80vw;
 }
+
+
+/* locations CSS */
+
