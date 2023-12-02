@@ -32,11 +32,15 @@
             </div>
             <div class="button"></div>
         
-            {{#if login}}
-            <a href="/home">Logout</a>
+            {{#if logged_in}}
+            <a id="logout" href="/login">Logout</a>
             {{else}}
             <a href="/login">Login</a>
+            <a href="/signup">Sign Up</a>
             {{/if}} 
+
+            {{!-- {{#if logged_in}} --}}
+
         </div>
         </div>
     </nav>

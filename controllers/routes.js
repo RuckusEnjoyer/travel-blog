@@ -77,7 +77,7 @@ router.get('/blog/:id', async (req, res) => {
 
 //TO DO: GET to the login
 router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
+    if (req.session.logged_in) {
       res.redirect('/');
       return;
     }
