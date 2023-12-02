@@ -4,13 +4,11 @@ const logoutHandler = async () => {
         headers: {'Content-Type': 'application/json'}
     });
     if(response.ok){
-        document.location.replace('/login');
+        document.location.replace('/');
     } else {
         alert('Failed to log out');
     }
 }
 
-const logout = document.querySelector('#logout');
-if(logout){
-    logout.addEventListener('click', logoutHandler);
-}
+
+    document.querySelector("#logout").addEventListener('click', logoutHandler);
