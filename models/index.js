@@ -33,8 +33,8 @@ Blog.belongsTo(Destination, {
     foreignKey: 'destination_id'
 })
 
-Tag.hasMany(Blog, {
-    foreignKey: 'tag_id'
-})
+// Tag.belongsToMany(Blog, {
+//     foreignKey: 'tag_id'
+// })
 
 module.exports = { User, Blog, Comment, Tag, Destination };

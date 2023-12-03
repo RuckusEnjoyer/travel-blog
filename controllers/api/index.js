@@ -4,8 +4,12 @@ const tags = require('./tagsRoute.js');
 const comments = require('./commentsRoute.js');
 const blogs = require('./blogsRoute.js');
 
-// router.use('/blogs', blogs);
+router.use('/blogs', blogs);
 // router.use('/comments', comments);
 // router.use('/tags', tags);
 router.use('/users', users);
+
 module.exports = router;
+
+
+// api routes
