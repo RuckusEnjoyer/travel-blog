@@ -29,26 +29,41 @@
             <i class="uil uil-search"></i>
             <input type="search" placeholder="Search for locations...">
         </div>
-            <label class="button" id="btn-create" for="create-post">Create</label>
+            {{!-- <label class="button" id="btn-create" for="create-post">Create</label> --}}
+            <a href="/blog" class="button" id="btn-create">Create</a>
             <div class="profile-picture">
                 <img src="https://exotic-landscapes.com/wp-content/uploads/2022/04/Sin-titulo-1-03-min.png" alt="Profile Picture.">
             </div>
             <div class="button"></div>
         
-            {{#if login}}
-            <a class="button" href="/home">Logout</a>
+
+            {{#if logged_in}}
+            <a id="logout" href="/">Logout</a>
             {{else}}
-            <a class="button" href="/login">Login</a>
+            <a href="/login">Login</a>
+            <a href="/signup">Sign Up</a>
             {{/if}} 
+
+
+
         </div>
         </div>
     </nav>
     <div id="middle" class="feeds">
         {{{body}}}
     </div>
+
+    
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
+    
+
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
      <script src="/js/map.js"></script>
+
 </body>
 </html>
+

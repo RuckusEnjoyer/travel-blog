@@ -45,6 +45,33 @@ router.get('/dashboard', async (req, res) => {
 })
 //TO DO: GET to an individual Post
 
+router.get('/blog', async (req, res) => {
+    try{
+        const blogData = await Blog.findAll({
+            include: [
+                {
+                    model: User,
+                    attributes: ['username']
+                },
+                // {
+                //     model: Tag,
+                //     attributes: ['name']
+                // }
+            ]
+        })
+        const blogs = blogData.map((blog) => blog.get({ plain: true }));
+
+        res.render('blog', {
+            blogs,
+            logged_in: req.session.logged_in
+        })
+    } catch (err){
+        console.log(err)
+        res.status(500).json(err)
+    }
+})
+
+
 router.get('/blog/:id', async (req, res) => {
     try{
         const blogData = await Blog.findByPK({
@@ -77,7 +104,7 @@ router.get('/blog/:id', async (req, res) => {
 
 //TO DO: GET to the login
 router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
+    if (req.session.logged_in) {
       res.redirect('/');
       return;
     }

@@ -9,15 +9,15 @@ const blogData = [
         tag_id: 1
     },
     {
-        title: 'Blog 2',
-        content: 'Content for blog 2',
+        blog_title: 'Blog 2',
+        blog_content: 'Content for blog 2',
         user_id: 2,
         destination_id: 2,
         tag_id: 2
     },
     {
-        title: 'Blog 3',
-        content: 'Content for blog 3',
+        blog_title: 'Blog 3',
+        blog_content: 'Content for blog 3',
         user_id: 3,
         destination_id: 3,
         tag_id: 3

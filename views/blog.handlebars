@@ -1,0 +1,39 @@
+<div class="info">
+    <h3>Create a Memories:</h3>
+
+    <form class="form new-blog-form">
+      <div class="form-group">
+        <label for="blog-title">Location:</label>
+        <input class="form-input" type="text" id="blog-title" name="blog-title" />
+      </div>
+
+      <div class="form-group">
+        <label for="blog-content">Your experience:</label>
+        <textarea class="form-input" id="blog-content" name="blog-content"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+
+
+    {{#if blogs.length}}
+    <div>
+      <h3>Memories:</h3>
+      <ul class="blog-list">
+        {{#each blogs}}
+        <li class="blog-item">
+          <div class="blog-item__title">{{blog_title}}</div>
+          <div class="blog-item__content">{{blog_content}}</div>
+       
+          <div>
+            <p>Created by: {{user.username}}</p>
+          </div>
+        </li>
+        {{/each}}
+      </ul>
+      {{/if}}
+    </div>
+</div>
+<script src="/js/blog.js"></script>
+```
