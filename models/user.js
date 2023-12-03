@@ -17,7 +17,6 @@ User.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
-            //util for id???
             autoIncrement: true,
         },
         username: {
@@ -43,6 +42,7 @@ User.init(
     },
     {
         hooks: {
+
             async beforeCreate(newUserData){
                 newUserData.password = await bcrypt.hash(newUserData.password, 10);
                 return newUserData;
@@ -52,6 +52,7 @@ User.init(
                 updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
                 return updatedUserData;
             }
+
         },
         sequelize,
         timestamps: true,
