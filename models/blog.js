@@ -25,10 +25,17 @@ Blog.init({
             key: 'id'
         }
     },
-    destination_id: {
+    location_id: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'destination',
+            model: 'location',
+            key: 'id'
+        }
+    },
+    tag_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'tag',
             key: 'id'
         }
     }
