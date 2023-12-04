@@ -105,9 +105,7 @@ router.get('/blog/:id', async (req, res) => {
 //GET TO 'SEE LOCATIONS'
 router.get('/locations', async (req, res) => {
     try{
-        const locationData = await Location.findAll({
-            include: []
-        })
+        const locationData = await Location.findAll()
         const locations = locationData.map((loc) => loc.get({ plain: true }));
 
         res.render('locations', {
@@ -117,6 +115,24 @@ router.get('/locations', async (req, res) => {
     } catch (err){
         console.log(err)
         res.status(500).json(err)
+    }
+})
+
+//GET TO ONE SINGLE LOCATION
+router.get('/locations/:id', async (req, res) => {
+    try{
+        const locations = await Location.findByPK({
+            include: [
+                {
+                    model: 'blog',
+                    key: 'location_id'
+                }
+            ]
+        })
+        console.log(locations)
+        res.json(locations);
+    } catch (err) {
+        res.status(500).json(err);
     }
 })
 

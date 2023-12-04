@@ -14,4 +14,11 @@
       </div>
     </form>
 </div>
+{{!-- PUT LOCATIONS HERE --}}
+<section>
+{{#each locations as |location|}}
+{{> location_card}}
+{{/each}}
+</section>
+
 <script src="/js/location.js"></script>
