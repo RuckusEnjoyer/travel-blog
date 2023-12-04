@@ -1,15 +1,15 @@
 const router = require('express').Router();
-const { User, Comment, Blog, Tag, Destination } = require('../models')
+const { User, Comment, Blog, Tag, Location } = require('../models')
 //TO DO: GET to the homepage
 router.get('/', async (req, res) => {
     try{
-        const destinationData = await Destination.findAll({
+        const locationData = await Location.findAll({
             include: []
         })
-        const destinations = destinationData.map((dest) => dest.get({ plain: true }));
+        const locations = locationData.map((loc) => loc.get({ plain: true }));
 
         res.render('home', {
-            destinations,
+            locations,
             logged_in: req.session.logged_in
         })
     } catch (err){
@@ -26,10 +26,10 @@ router.get('/dashboard', async (req, res) => {
                     model: User,
                     attributes: ['username']
                 },
-                {
-                    model: Tag,
-                    attributes: ['name']
-                }
+                // {
+                //     model: Tag,
+                //     attributes: ['name']
+                // }
             ]
         })
         const blogs = blogData.map((blog) => blog.get({ plain: true }));
@@ -92,8 +92,26 @@ router.get('/blog/:id', async (req, res) => {
         })
         const blog = blogData.map((blog) => blog.get({ plain: true }));
 
-        res.render('dashboard', {
+        res.render('blog_focus', {
             blog,
+            logged_in: req.session.logged_in
+        })
+    } catch (err){
+        console.log(err)
+        res.status(500).json(err)
+    }
+})
+
+//GET TO 'SEE LOCATIONS'
+router.get('/locations', async (req, res) => {
+    try{
+        const locationData = await Location.findAll({
+            include: []
+        })
+        const locations = locationData.map((loc) => loc.get({ plain: true }));
+
+        res.render('locations', {
+            locations,
             logged_in: req.session.logged_in
         })
     } catch (err){
