@@ -18,7 +18,10 @@ const newLocation = async (event) => {
 
 //GET LOCATION ID FOR LINKS
 const locationLinkHandler = async (event) => {
-    window.location.href = `/location/${event.target.id}`
+    const link = `/locations/${event.target.id}`
+    console.log(link)
+    window.location.href = link
+    
 }
 
 //
