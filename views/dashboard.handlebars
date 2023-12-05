@@ -1,7 +1,37 @@
-<div class="info">
-    <h3>Here Are Your Journies{{username}}</h3>
+<section class="info homediv">
+    <h3>Here Are Your Journies {{username}}!</h3>
+    <div>
+<ul class="blog-list">
+    {{#each blogs}}
+        <li>
+            <h4>{{this.blog_title}}</h4>
+            <p>{{this.blog_content}}</p>
+            <p>Created by: {{this.user.username}}</p>
+            <p>User ID: {{this.user_id}}</p>
+        </li>
+    {{/each}}
+</ul>
+    </div>
+</section>
 
-
-
-</div>
-<script src="/js/dashboard.js"></script>
+{{!-- <section class="info homediv">
+  <h3>Here Are Your Journies {{user.username}}!</h3>
+  {{#if blogs.length}}
+  <div>
+    <h3>Memories:</h3>
+    <ul class="blog-list">
+      {{#each blogs}}
+      {{#if (eq user_id ../user.id)}} <!-- Check if the blog was created by the current user -->
+      <li class="blog-item">
+        <div class="blog-item__title">{{blog_title}}</div>
+        <div class="blog-item__content">{{blog_content}}</div>
+        <div>
+          <p>Created by: {{user.username}}</p>
+        </div>
+      </li>
+      {{/if}}
+      {{/each}}
+    </ul>
+  </div>
+  {{/if}}
+</section> --}}
