@@ -165,8 +165,61 @@ border-radius: 3%;
     display: flex;
     height: 30vh; 
     Width: 80vw;
+    z-index: 0;
 }
 
 
 /* locations CSS */
 
+.loc-map {
+    display: flex;
+    height: 30vh;
+    width: 45vw;
+    margin-top: -6vh;
+}
+
+.flex{
+    display: flex;
+}
+.right {
+    display: flex;
+    margin: 10px;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.left{
+    display: flex;
+    margin: 10px;
+    flex-direction: column;
+}
+
+.blog-form {
+    height: 40vh;
+    width: 45vw;
+    text-align: center;
+}
+
+.form-group{
+    flex-direction: column;
+    align-items: center;
+}
+.form-input{
+    width: 35vw;
+    height: 5vh;
+    margin: 15px;
+}
+.btn{
+    background-color: var(--color-dark) !important;
+    padding: 10px;
+}
+.title{
+    padding: 15px;
+    width: 45vw;
+    margin-top: -6vh;
+    text-align: center;
+}
+
+.center{
+    justify-content: space-evenly;
+}

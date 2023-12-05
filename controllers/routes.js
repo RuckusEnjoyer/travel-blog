@@ -5,13 +5,17 @@ const withAuth = require("../utils/auth");
 //TO DO: GET to the homepage
 router.get('/', async (req, res) => {
     try{
-        const locationData = await Location.findAll({
-            include: []
+        const blogData = await Blog.findAll({
+            include: [
+                {
+                    
+                }
+            ]
         })
-        const locations = locationData.map((loc) => loc.get({ plain: true }));
+        const blogs = blogData.map((blog) => blog.get({ plain: true }));
 
         res.render('home', {
-            locations,
+            blogs,
             logged_in: req.session.logged_in
         })
     } catch (err){
