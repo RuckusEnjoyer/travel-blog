@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const { User, Comment, Blog, Tag, Location } = require('../models')
+
+
 //TO DO: GET to the homepage
 router.get('/', async (req, res) => {
     try{
@@ -120,17 +122,17 @@ router.get('/locations', async (req, res) => {
 
 //GET TO ONE SINGLE LOCATION
 router.get('/locations/:id', async (req, res) => {
+    console.log(req.params.id)
     try{
-        const locations = await Location.findByPK({
-            include: [
-                {
-                    model: 'blog',
-                    key: 'location_id'
-                }
-            ]
+        const locData = await Location.findByPk(req.params.id)
+        console.log(locData)
+
+        const serializedData = locData.get({ plain : true })
+        console.log(serializedData)
+        res.render('locationFocus', {
+            serializedData,
+            logged_in: req.session.logged_in
         })
-        console.log(locations)
-        res.json(locations);
     } catch (err) {
         res.status(500).json(err);
     }

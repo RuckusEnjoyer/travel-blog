@@ -25,5 +25,8 @@ router.post('/', withAuth, async (req, res) => {
     }
 })
 
+// //GETTING ONE ID
+// router.post('/:id',)
+
 
 module.exports = router;
