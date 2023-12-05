@@ -29,7 +29,8 @@ router.get('/dashboard',withAuth, async (req, res) => {
         const blogData = await Blog.findAll({
             where: {
               user_id: req.session.user_id
-            }
+            },
+            include:[{model: User}]
           });
         const blogs = blogData.map((blog) => blog.get({ plain: true }));
 
