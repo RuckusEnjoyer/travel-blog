@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User, Comment, Blog, Tag, Location } = require('../models')
 const withAuth = require("../utils/auth");
+
 //TO DO: GET to the homepage
 router.get('/', async (req, res) => {
     try{
@@ -100,9 +101,7 @@ router.get('/blog/:id', async (req, res) => {
 //GET TO 'SEE LOCATIONS'
 router.get('/locations', async (req, res) => {
     try{
-        const locationData = await Location.findAll({
-            include: []
-        })
+        const locationData = await Location.findAll()
         const locations = locationData.map((loc) => loc.get({ plain: true }));
 
         res.render('locations', {
@@ -112,6 +111,24 @@ router.get('/locations', async (req, res) => {
     } catch (err){
         console.log(err)
         res.status(500).json(err)
+    }
+})
+
+//GET TO ONE SINGLE LOCATION
+router.get('/locations/:id', async (req, res) => {
+    console.log(req.params.id)
+    try{
+        const locData = await Location.findByPk(req.params.id)
+        console.log(locData)
+
+        const serializedData = locData.get({ plain : true })
+        console.log(serializedData)
+        res.render('locationFocus', {
+            serializedData,
+            logged_in: req.session.logged_in
+        })
+    } catch (err) {
+        res.status(500).json(err);
     }
 })
 
