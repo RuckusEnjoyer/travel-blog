@@ -6,11 +6,6 @@ const withAuth = require("../utils/auth");
 router.get('/', async (req, res) => {
     try{
         const blogData = await Blog.findAll({
-            include: [
-                {
-                    
-                }
-            ]
         })
         const blogs = blogData.map((blog) => blog.get({ plain: true }));
 
