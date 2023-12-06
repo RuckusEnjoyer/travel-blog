@@ -1,5 +1,5 @@
-<section class="info homediv" id="{{location.id}}">
-    <h2>Placeholder Name</h2>
+<section class="info homediv" id="{{id}}">
+    <h2>{{name}}</h2>
 </section>
 
 <section class="flex center">
@@ -19,9 +19,9 @@
     <div class="loc-map card" id="map"></div>
     {{!-- POSTING A POST --}}
 
-    <form class="blog-form card info">
+    <form class="blog-form new-blog-form card info">
         <h3>Share a Memory:</h3>
-
+    
       <div class="form-group">
         <label for="blog-title">Title:</label>
         {{!-- Dropdown? TO DO: GET REQUEST LOCATIONS TO BLOG! --}}
@@ -34,7 +34,7 @@
       </div>
       <div class="form-group">
         {{!-- TO DO: WHEN YOU HIT THIS BUTTON GET REQUEST TO DASHBOARD!! --}}
-        <button type="submit" class="button btn">Create</button>
+        <button type="submit" class=" button btn">Create</button>
       </div>
     </form>
 </section>
