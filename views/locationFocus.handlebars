@@ -1,11 +1,12 @@
-<section class="info homediv">
+<section class="info homediv" id="{{location.id}}">
     <h2>Placeholder Name</h2>
 </section>
 
 <section class="flex center">
-{{!-- WHERE ALL BLOGS GO: --}}
+
+{{!--LEFT SIDE: WHERE ALL BLOGS GO: --}}
 <section class="left">
-    <h3 class="card title info"> Memories</h3>
+    <h3 class="card title info" id="post-place"> Memories</h3>
     {{!-- TO DO: ADD BLOGS FROM GET REQUEST INTO HERE. EACH LOOP --}}
     {{#each blogs as |blog|}}
     {{>blog_card}}
@@ -13,13 +14,14 @@
 </section>
 
 
-
+{{!-- RIGHT SIDE: WHERE MAP AND CREATE GOES --}}
 <section class="right">
     <div class="loc-map card" id="map"></div>
     {{!-- POSTING A POST --}}
 
     <form class="blog-form card info">
         <h3>Share a Memory:</h3>
+
       <div class="form-group">
         <label for="blog-title">Title:</label>
         {{!-- Dropdown? TO DO: GET REQUEST LOCATIONS TO BLOG! --}}
@@ -39,3 +41,4 @@
 
 
 </section>
+<script src="/js/blog.js"></script>

@@ -17,5 +17,14 @@ if (process.env.JAWSDB_URL) {
     }
   );
 }
+sequelize.define('user', {
+  email: Sequelize.STRING,
+  username: Sequelize.STRING
+}, {
+  indexes: [
+    {unique:true, fields:['email']},
+    {unique:true, fields:['username']}
+  ]
+})
 
 module.exports = sequelize;

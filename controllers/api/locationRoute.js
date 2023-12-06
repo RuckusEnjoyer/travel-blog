@@ -57,21 +57,7 @@ router.get('/api/locations', async (req, res) => {
     }
   });
   
-  // Route to display a location page
-//   router.get('/locations/:id', async (req, res) => {
-//     try {
-//       const { id } = req.params;
-  
-//       // Query the database for the location with the specified ID
-//       const location = await Location.findByPk(id);
-  
-//       // Render the location page using a template engine
-//       res.render('location', { location });
-//     } catch (error) {
-//       console.error('Error:', error);
-//       res.status(500).json({ error: 'Internal server error' });
-//     }
-//   });
+
 
 
 module.exports = router;
