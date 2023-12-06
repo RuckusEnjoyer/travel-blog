@@ -23,6 +23,7 @@
     <div>
       <ul class="blog-list">
         {{#each blogs}}
+        <p>{{comment.name}}</p>
         {{> blog_card}}
         {{/each}}
       </ul>

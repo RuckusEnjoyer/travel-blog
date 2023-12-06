@@ -29,10 +29,12 @@ router.get('/dashboard',withAuth, async (req, res) => {
           });
         const blogs = blogData.map((blog) => blog.get({ plain: true }));
 
+        const username = req.session.username;
+          
         res.render('dashboard', {
             blogs,
+            user: { username },
             logged_in: req.session.logged_in,
-            user: User
         })
     } catch (err){
         console.log(err)
@@ -49,18 +51,24 @@ router.get('/blog', async (req, res) => {
                     model: User,
                     attributes: ['username']
                 },
+                
+                    Comment
+                
                 // {
-                //     model: Tag,
-                //     attributes: ['name']
+                //     model: Comment,
+                //     attributes: ['name', 'comment_content', 'user_id']
                 // }
             ]
         })
         const blogs = blogData.map((blog) => blog.get({ plain: true }));
 
+      
+
         res.render('blog', {
             blogs,
             logged_in: req.session.logged_in
         })
+
     } catch (err){
         console.log(err)
         res.status(500).json(err)
@@ -77,12 +85,8 @@ router.get('/blog/:id', async (req, res) => {
                     attributes: ['username']
                 },
                 {
-                    model: Tag,
-                    attributes: ['name']
-                },
-                {
                     model: Comment,
-                    attributes: ['name', 'body', 'user_id']
+                    attributes: ['name', 'comment_content', 'user_id']
                 }
             ]
         })
@@ -143,6 +147,8 @@ router.get('/locations/:id', async (req, res) => {
         res.status(500).json(err);
     }
 })
+
+
 
 //TO DO: GET to the login
 router.get('/login', (req, res) => {
