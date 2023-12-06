@@ -28,10 +28,13 @@
         <a href="/" class="button" id="home">Home</a>
         <a href="/locations" class="button" id="location">See Locations</a>
         <a href="/dashboard" class="button" id="dashboard">Your dashboard</a>
-        <div class="search-bar">
-            <i class="uil uil-search"></i>
-            <input type="search" placeholder="Search for locations...">
-        </div>
+<div class="search-bar">
+    <form id="search-form">
+        <input type="search" id="search-input" placeholder="Search for locations...">
+        <button type="submit">Search</button>
+    </form>
+</div>
+
             {{!-- <label class="button" id="btn-create" for="create-post">Create</label> --}}
             <a href="/blog" class="button" id="btn-create">Create</a>
             <div class="profile-picture">
@@ -61,11 +64,12 @@
     <script src="/js/logout.js"></script>
     {{/if}}
     
-
+    <script src="/js/search.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
      <script src="/js/map.js"></script>
+    
 
 </body>
 </html>
