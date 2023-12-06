@@ -33,6 +33,9 @@ Blog.belongsTo(Location, {
     foreignKey: 'location_id'
 })
 
+Location.hasMany(Blog, {
+    foreignKey: 'location_id'
+})
 // Tag.belongsToMany(Blog, {
 //     foreignKey: 'tag_id'
 // })
