@@ -123,7 +123,7 @@ router.get('/locations/:id', async (req, res) => {
             include: [
                 {
                     model: Blog,
-                    attributes: ['blog_content', 'user_id'],
+                    attributes: ['blog_content', 'blog_title', 'user_id'],
                     include: [
                         {
                             model: User,
