@@ -1,4 +1,4 @@
-<li class="blog-item info carddiv card">
+<section class="blog-item info carddiv card">
           <h3 class="blog-item__title">{{blog_title}}</h3>
           <p class="brown">--- --- ---</p>
           <p class="blog-item__content">{{blog_content}}</p>
@@ -6,12 +6,15 @@
           <div>
             <p>Created by: {{user.username}}</p>
           </div>
-
+          <p>Comments:</p>
+</section>
+<section>
+  {{> commentCreate}}
+</section>
+<section>
         <div>
           {{#each comment}}
           {{> comment}}
           {{/each}}
         </div>
-    
-
-</li>
+</section>
