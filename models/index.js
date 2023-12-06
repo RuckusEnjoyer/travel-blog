@@ -1,7 +1,6 @@
 const Blog = require('./blog');
 const User = require('./user');
 const Comment = require('./comment');
-const Tag = require('./Tag');
 const Location = require('./Location');
 
 User.hasMany(Blog, {
@@ -36,8 +35,6 @@ Blog.belongsTo(Location, {
 Location.hasMany(Blog, {
     foreignKey: 'location_id'
 })
-// Tag.belongsToMany(Blog, {
-//     foreignKey: 'tag_id'
-// })
 
-module.exports = { User, Blog, Comment, Tag, Location };
+
+module.exports = { User, Blog, Comment, Location };
