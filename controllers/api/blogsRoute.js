@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Blog } = require("../../models");
+const { Blog, User, Comment } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 router.post("/", withAuth, async (req, res) => {
@@ -35,6 +35,33 @@ router.put("/:id", withAuth, async (req, res) => {
     }
 })
 
+router.get("/", async (req, res) => {
+    try{
+        const blogs = await Blog.findAll({
+            where: {
+                location_id: req.params.id
+            }
+        }, {
+            include: [
+                {
+                    model: Blog,
+                    include: [
+                        {
+                            model: User
+                        },
+                        {
+                            model: Comment
+                        }
+                    ]
+                },   
+            ]
+        })
+        res.status(200).json(blogs);
+
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
 
 
 module.exports = router;

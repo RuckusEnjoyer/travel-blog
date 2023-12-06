@@ -198,6 +198,8 @@ border-radius: 3%;
     height: 40vh;
     width: 45vw;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .form-group{
@@ -205,7 +207,7 @@ border-radius: 3%;
     align-items: center;
 }
 .form-input{
-    width: 35vw;
+    width: 42vw;
     height: 5vh;
     margin: 15px;
 }

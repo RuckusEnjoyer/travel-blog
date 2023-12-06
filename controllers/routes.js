@@ -6,11 +6,7 @@ const withAuth = require("../utils/auth");
 router.get('/', async (req, res) => {
     try{
         const blogData = await Blog.findAll({
-            include: [
-                {
-                    
-                }
-            ]
+            include: []
         })
         const blogs = blogData.map((blog) => blog.get({ plain: true }));
 
@@ -29,8 +25,7 @@ router.get('/dashboard',withAuth, async (req, res) => {
         const blogData = await Blog.findAll({
             where: {
               user_id: req.session.user_id
-            },
-            include:[{model: User}]
+            }
           });
         const blogs = blogData.map((blog) => blog.get({ plain: true }));
 
@@ -123,7 +118,19 @@ router.get('/locations', async (req, res) => {
 router.get('/locations/:id', async (req, res) => {
     console.log(req.params.id)
     try{
-        const locData = await Location.findByPk(req.params.id)
+        const locData = await Location.findByPk(req.params.id, {
+            include: [
+                {
+                    model: Blog,
+                    attributes: [
+                        'id',
+                        'blog_title',
+                        'user_id',
+                        'blog_content'
+                    ]
+                }
+            ]
+        } )
         console.log(locData)
 
         const serializedData = locData.get({ plain : true })

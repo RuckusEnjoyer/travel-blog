@@ -15,4 +15,9 @@ const newPost = async (event) => {
         }
     }
 }
+
+const fetchPosts = async () => {
+    const postPlace = document.querySelector("#post-place")
+    const id = document.querySelector("#location-id");
+}
 document.querySelector(".new-blog-form").addEventListener("submit", newPost);

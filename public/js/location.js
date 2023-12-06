@@ -1,4 +1,4 @@
-//GRABS ALL LOCATIONS FROM API
+//ADDS LOCATION TO THE DATABASE
 const newLocation = async (event) => {
     event.preventDefault();
     const location_name = document.querySelector("#location-name").value.trim();
