@@ -1,44 +1,29 @@
-
-
-{{!-- <section>
-<h2>{{this.name}}</h2>
+<section class="info homediv" id="{{location.id}}">
+    <h2>Placeholder Name</h2>
 </section>
 
-<p class="homediv"> hi</p>
+<section class="flex center">
 
-<section class="homediv location">
-  <h2>Blogs for this location</h2>
-  <ul class="blog-list">
-    {{#each blogs}}
-      <li>
-        <h3>{{this.blog_title}}</h3>
-        <p>{{this.blog_content}}</p>
-        <ul class="comment-list">
-          {{#each this.comments}}
-            <li>{{this.comment_content}}</li>
-          {{/each}}
-        </ul>
-      </li>
+{{!--LEFT SIDE: WHERE ALL BLOGS GO: --}}
+<section class="left">
+    <h3 class="card title info" id="post-place"> Memories</h3>
+    {{!-- TO DO: ADD BLOGS FROM GET REQUEST INTO HERE. EACH LOOP --}}
+    {{#each blogs as |blog|}}
+    {{>blog_card}}
     {{/each}}
-  </ul>
-  <form id="new-blog-form">
-    <input type="text" id="blog-title" placeholder="Blog title">
-    <textarea id="blog-content" placeholder="Blog content"></textarea>
-    <button type="submit">Post blog</button>
-  </form>
-  <form id="new-comment-form">
-    <textarea id="comment-content" placeholder="Comment content"></textarea>
-    <button type="submit">Post comment</button>
-  </form>
 </section>
-<script src="/js/blog.js"></script> --}}
 
-<div class="info homediv">
-    <h3>Create a Memories:</h3>
 
-    <form class="form new-blog-form">
+{{!-- RIGHT SIDE: WHERE MAP AND CREATE GOES --}}
+<section class="right">
+    <div class="loc-map card" id="map"></div>
+    {{!-- POSTING A POST --}}
+
+    <form class="blog-form card info">
+        <h3>Share a Memory:</h3>
+
       <div class="form-group">
-        <label for="blog-title">Location:</label>
+        <label for="blog-title">Title:</label>
         {{!-- Dropdown? TO DO: GET REQUEST LOCATIONS TO BLOG! --}}
         <input class="form-input" type="text" id="blog-title" name="blog-title" />
       </div>
@@ -49,22 +34,11 @@
       </div>
       <div class="form-group">
         {{!-- TO DO: WHEN YOU HIT THIS BUTTON GET REQUEST TO DASHBOARD!! --}}
-        <button type="submit" class="btn btn-primary">Create</button>
+        <button type="submit" class="button btn">Create</button>
       </div>
     </form>
+</section>
 
 
-    {{#if locBlog.length}}
-    <div>
-        <h3>Memories:</h3>
-      <ul class="blog-list">
-        {{#each blogs}}
-        <p>{{comment.name}}</p>
-        {{> blog_card}}
-        {{/each}}
-      </ul>
-      {{/if}}
-    </div>
-</div>
-
+</section>
 <script src="/js/blog.js"></script>
