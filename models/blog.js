@@ -28,17 +28,17 @@ Blog.init({
     location_id: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'location',
+            model: 'Location',
             key: 'id'
         }
     },
-    tag_id: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: 'tag',
-            key: 'id'
-        }
-    }
+    // tag_id: {
+    //     type: DataTypes.INTEGER,
+    //     references: {
+    //         model: 'tag',
+    //         key: 'id'
+    //     }
+    // }
 }, {
     sequelize,
     freezeTableName: true,

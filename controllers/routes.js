@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Comment, Blog, Tag, Location } = require('../models')
+const { User, Comment, Blog, Location } = require('../models')
 const withAuth = require("../utils/auth");
 
 //TO DO: GET to the homepage
@@ -52,13 +52,10 @@ router.get('/blog', async (req, res) => {
                     model: User,
                     attributes: ['username']
                 },
-                
-                    Comment
-                
-                // {
-                //     model: Comment,
-                //     attributes: ['name', 'comment_content', 'user_id']
-                // }
+                {
+                    model: Comment,
+                    attributes: ['comment_content', 'user_id']
+                  }
             ]
         })
         const blogs = blogData.map((blog) => blog.get({ plain: true }));
@@ -121,15 +118,50 @@ router.get('/locations', async (req, res) => {
 
 //GET TO ONE SINGLE LOCATION
 router.get('/locations/:id', async (req, res) => {
-    console.log(req.params.id)
-    try{
-        const locData = await Location.findByPk(req.params.id)
-        console.log(locData)
 
-        const serializedData = locData.get({ plain : true })
-        console.log(serializedData)
+    try{
+        const locData = await Location.findByPk(req.params.id, {
+            include: [
+                {
+                    model: Blog,
+                    attributes: ['blog_content', 'user_id'],
+                    include: [
+                        {
+                            model: User,
+                            attributes: ['username']
+                        },
+                        {
+                            model: Comment,
+                            attributes: ['comment_content', 'user_id'],
+                            include: [
+                                {
+                                    model: User,
+                                    attributes: ['username']
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        })
+        const locBlog = locData.get({ plain : true })
+        // const locationId = req.params.id;
+        // const blogData = await Blog.findAll({
+        //   where: {
+        //     location_id: locationId
+        //   },
+        //   include: [
+        //     {
+        //       model: Comment,
+        //       attributes: ['comment_content', 'user_id']
+        //     }
+        //   ]
+        // });
+        // const blogs = blogData.map((blog) => blog.get({ plain: true }));
+       
         res.render('locationFocus', {
-            serializedData,
+            ...locBlog,
+        //    ...blogs,
             logged_in: req.session.logged_in
         })
     } catch (err) {

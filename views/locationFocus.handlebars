@@ -1,8 +1,70 @@
 
 
-<section>
-<h2>{{name}}</h2>
+{{!-- <section>
+<h2>{{this.name}}</h2>
 </section>
 
 <p class="homediv"> hi</p>
 
+<section class="homediv location">
+  <h2>Blogs for this location</h2>
+  <ul class="blog-list">
+    {{#each blogs}}
+      <li>
+        <h3>{{this.blog_title}}</h3>
+        <p>{{this.blog_content}}</p>
+        <ul class="comment-list">
+          {{#each this.comments}}
+            <li>{{this.comment_content}}</li>
+          {{/each}}
+        </ul>
+      </li>
+    {{/each}}
+  </ul>
+  <form id="new-blog-form">
+    <input type="text" id="blog-title" placeholder="Blog title">
+    <textarea id="blog-content" placeholder="Blog content"></textarea>
+    <button type="submit">Post blog</button>
+  </form>
+  <form id="new-comment-form">
+    <textarea id="comment-content" placeholder="Comment content"></textarea>
+    <button type="submit">Post comment</button>
+  </form>
+</section>
+<script src="/js/blog.js"></script> --}}
+
+<div class="info homediv">
+    <h3>Create a Memories:</h3>
+
+    <form class="form new-blog-form">
+      <div class="form-group">
+        <label for="blog-title">Location:</label>
+        {{!-- Dropdown? TO DO: GET REQUEST LOCATIONS TO BLOG! --}}
+        <input class="form-input" type="text" id="blog-title" name="blog-title" />
+      </div>
+{{!-- Input information here --}}
+      <div class="form-group">
+        <label for="blog-content">Your experience:</label>
+        <textarea class="form-input" id="blog-content" name="blog-content"></textarea>
+      </div>
+      <div class="form-group">
+        {{!-- TO DO: WHEN YOU HIT THIS BUTTON GET REQUEST TO DASHBOARD!! --}}
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+
+
+    {{#if locBlog.length}}
+    <div>
+        <h3>Memories:</h3>
+      <ul class="blog-list">
+        {{#each blogs}}
+        <p>{{comment.name}}</p>
+        {{> blog_card}}
+        {{/each}}
+      </ul>
+      {{/if}}
+    </div>
+</div>
+
+<script src="/js/blog.js"></script>

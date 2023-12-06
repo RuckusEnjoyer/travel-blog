@@ -5,13 +5,12 @@
           <div>
             <p>Created by: {{user.username}}</p>
           </div>
+
         <div>
-           {{!-- {{#each comments}} --}}
-            <div class="blog-item_comment">
-              
-              <p>{{comments.comment_content}}</p>
-              {{!-- <p>Created by: {{user.username}}</p> --}}
-            </div>
-            {{!-- {{/each}} --}}
+          {{#each comment}}
+          {{> comment}}
+          {{/each}}
         </div>
+    
+
 </li>
