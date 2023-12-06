@@ -29,11 +29,10 @@ Comment.belongsTo(User, {
 Comment.belongsTo(Blog, {
     foreignKey: 'post_id'
 })
-// Blog.hasOne(Location, {
-//     foreignKey: 'location_id'
-// })
+Blog.belongsTo(Location)
+
 Location.hasMany(Blog, {
-    foreignKey: 'blog_id'
+    foreignKey: 'location_id'
 
 })
 
