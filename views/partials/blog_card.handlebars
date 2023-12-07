@@ -1,4 +1,5 @@
-<section class="blog-item info carddiv card blog" id="{{id}}">
+<section data-id="{{id}}">
+<section class="blog-item info carddiv card blog"  data-id="{{id}}" id="{{blog_title}}">
           <h3 class="blog-item__title">{{blog_title}}</h3>
           <p class="brown">--- --- ---</p>
           <p class="blog-item__content">{{blog_content}}</p>
@@ -8,19 +9,19 @@
           </div>
           <p>Comments:</p>
 </section>
-<section class="darkbg commentdiv">
-    <form class="new-comment-form">
+
+    <form class="new-comment-form commentdiv">
         <div class="form-group">
             <input type="text" id="comment-content" name="comment-content" class="form-input"/>
         </div>
         <button type="submit">Comment</button>
     </form>
-</section>
 
+</section>
 
 <section>
         <div>
-          {{#each comment}}
+          {{#each blog.comment as |comment|}}
           {{> comment}}
           {{/each}}
         </div>
