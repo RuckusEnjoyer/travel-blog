@@ -12,20 +12,16 @@ searchForm.addEventListener('submit', async function(event) {
 
   try {
     // Make a GET request to the server to search for the location
-    const response = await fetch(`/api/location?search=${searchQuery}`);
+    const response = await fetch(`/api/location/search?search=${searchQuery}`);
     const data = await response.json();
     let matchId = null
+  console.log(data)
   
     // Check if any locations match the search query
-    for(let i = 0; i < data.length; i++){
-      if(data[i].name === searchQuery){
-        matchId = data[i].id
-        break;
-      }
-    }
-    if (matchId) {
+
+    if (data.id) {
       // Redirect the user to the location page with the ID in the URL
-      window.location.replace(`/locations/${matchId}`);
+      window.location.replace(`/locations/${data.id}`);
     } else {
       alert('No matching locations found.');
     }

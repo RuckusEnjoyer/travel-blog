@@ -5,8 +5,10 @@ const withAuth = require("../../utils/auth");
 
 //GET ALL LOCATIONS FROM LOCATIONS DATABASE
 router.get('/', async (req, res) => {
+
     try{
         const locations = await Location.findAll()
+        console.log("line 11")
         res.json(locations);
     } catch (err) {
         res.status(500).json(err);
@@ -17,7 +19,7 @@ router.get('/', async (req, res) => {
 router.post('/', withAuth, async (req, res) => {
     try{
        const newLoc = await Location.create({
-        name: req.body.location_name.toLowerCase(),
+        name: req.body.location_name,
        
        })
     res.status(200).json(newLoc)
@@ -31,24 +33,23 @@ router.post('/', withAuth, async (req, res) => {
 
 
 // Route to search for locations
-router.get('/api/locations', async (req, res) => {
+router.get('/search', async (req, res) => {
     try {
       const { search } = req.query;
-      console.log(search);
+      
   
       const location = await Location.findOne({
         where: {
-          name: search
+          name: search.toLowerCase()
         }
       });
   
       if (location) {
         // Get the ID of the found location
         const locationId = location.id;
-        console.log(locationId);
-  
+
         // Redirect the user to the location page with the ID in the URL
-        res.redirect(`/locations/${locationId}`);
+        res.json(location);
       } else {
         res.status(404).json({ message: 'No matching locations found.' });
       }

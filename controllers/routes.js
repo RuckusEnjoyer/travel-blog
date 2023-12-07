@@ -73,31 +73,7 @@ router.get('/blog', async (req, res) => {
 })
 
 
-router.get('/blog/:id', async (req, res) => {
-    try{
-        const blogData = await Blog.findByPK({
-            include: [
-                {
-                    model: User,
-                    attributes: ['username']
-                },
-                {
-                    model: Comment,
-                    attributes: ['name', 'comment_content', 'user_id']
-                }
-            ]
-        })
-        const blog = blogData.map((blog) => blog.get({ plain: true }));
 
-        res.render('blog_focus', {
-            blog,
-            logged_in: req.session.logged_in
-        })
-    } catch (err){
-        console.log(err)
-        res.status(500).json(err)
-    }
-})
 
 //GET TO 'SEE LOCATIONS'
 router.get('/locations', async (req, res) => {
