@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins&family=Young+Serif&display=swap');
 
+/* MAIN.HANDLEBARS PAGE */
+
 :root{
 --color-dark: (252,30% 17%);
 }
@@ -13,12 +15,7 @@
     list-style: none;
     border: none;
 }
-/*  */
-/* body{
-    font-family: 'Poppins', sans-serif;
-    color: var(--color-dark);
-    background-image: url(https://img.wallpapersafari.com/desktop/728/410/86/73/nv689z.jpg);
-} */
+
 body{
     font-family: 'Poppins', sans-serif;
     color: var(--color-dark);
@@ -65,15 +62,17 @@ nav{
     width: 100%;
     background-color: rgb(17, 16, 16);
     padding: 0.7rem 0;
-    position: fixed;
     top: 0;
     z-index: 10;
+    display: flex;
 }
  nav .container{
     display: flex;
     align-items: center;
     justify-content: space-between;
  }
+
+ /* SEARCH BAR IN NAV */
 
  nav .search-bar{
     color: (255,243,228);
@@ -96,15 +95,41 @@ nav .search-bar input[type="search"]::placeholder{
     font-size: 17px;
 }
 
+#search-form{
+    display: flex;
+}
+
+#searchbtn{
+    background-color:  rgb(49, 48, 48);
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 10px; 
+    color: antiquewhite
+}
+#searchbtn:hover{
+    background-color: brown
+}
+
+.logins{
+    width: 10vw;
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .logo {
     color: antiquewhite;
     font-size:35px;
 }
 
+/* GENERAL */
+
+
 .button{
     color: antiquewhite;
     cursor: pointer;
     text-decoration: none;
+    padding: 10px;
 }
 
 .button:hover{
@@ -157,13 +182,14 @@ border-radius: 3%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 10vh;
+    margin: 5vh;
 }
 
 .card {
     margin: 10px;
     padding: 10px;
     border-radius: 10px;
+    text-align: center
 }
 
 .home-map{
@@ -175,6 +201,13 @@ border-radius: 3%;
 
 
 /* locations CSS */
+.center{
+    justify-content: space-evenly;
+}
+
+.centerdiv{
+    justify-content: center;
+}
 
 .padding {
     padding: 10px;
@@ -185,12 +218,14 @@ border-radius: 3%;
     display: flex;
     height: 30vh;
     width: 45vw;
-    margin-top: -6vh;
+    margin-top: -2vh;
+    z-index: 1;
 }
 
 .flex{
     display: flex;
 }
+
 .right {
     display: flex;
     margin: 10px;
@@ -202,10 +237,11 @@ border-radius: 3%;
     display: flex;
     margin: 10px;
     flex-direction: column;
+
 }
 
 .blog-form {
-    height: 40vh;
+    min-height: 40vh;
     width: 45vw;
     text-align: center;
 }
@@ -223,28 +259,39 @@ border-radius: 3%;
     height: 15vh;
 }
 .btn{
-    background-color: var(--color-dark) !important;
-    padding: 10px;
+    background-color:  rgb(90, 87, 87);
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px; 
+    color: antiquewhite
 }
 .title{
     padding: 15px;
     width: 45vw;
-    margin-top: -6vh;
+    margin-top: -2vh;
     text-align: center;
 }
 
-.center{
-    justify-content: space-evenly;
-}
+
 
 /* Blog Card CSS */
+
+.blog-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .carddiv {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin:5vh;
+    margin:3vh 2vw;
+    width: 42vw;
 }
 
 .brown{
@@ -255,13 +302,24 @@ border-radius: 3%;
     background-color: var(--color-dark)
 }
 
-/* comment CSS */
 
-.commentdiv{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin:5vh;
-    margin-top: -2vh;
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 800px) {
+    nav .container {
+        flex-direction: column;
+    }
+    nav .search-bar input[type="search"]{
+        width: 60vw;
+    }
+    nav .container a {
+        padding: 10px;
+    }
+
+}
+
+@media screen and (max-width: 1000) {
+    nav .container {
+        flex-wrap: wrap;
+    }
 }
