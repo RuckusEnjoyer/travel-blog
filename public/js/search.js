@@ -14,7 +14,7 @@ searchForm.addEventListener('submit', async function(event) {
     // Make a GET request to the server to search for the location
     const response = await fetch(`/api/location/search?search=${searchQuery}`);
     const data = await response.json();
-    let matchId = null
+   
   console.log(data)
   
     // Check if any locations match the search query

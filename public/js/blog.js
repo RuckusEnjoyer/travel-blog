@@ -6,8 +6,7 @@ const newPost = async (event) => {
 
     if (blog_title && blog_content) {
         const location_id = window.location.pathname.split("/").pop();
-        // console.log(pathArray)
-        // const location_id = pathArray[pathArray.length];
+
         console.log(location_id)
         const response = await fetch("/api/blogs", {
             method: "POST",
@@ -15,9 +14,12 @@ const newPost = async (event) => {
             headers: { "Content-Type": "application/json" },
         });
         if (response.ok) {
-            document.location.replace("/locations");
+            
+            location.reload();
         } else {
-            alert("Failed to create blog");
+            window.location.href = "/login"
+            // const errorMessageElement = document.getElementById('error-post-message');
+            // errorMessageElement.textContent = 'Failed to make a post!';
         }
     }
 }
