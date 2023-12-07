@@ -123,7 +123,6 @@ router.get('/locations/:id', async (req, res) => {
        
         res.render('locationFocus', {
             ...locBlog,
-        //    ...blogs,
             logged_in: req.session.logged_in
         })
     } catch (err) {

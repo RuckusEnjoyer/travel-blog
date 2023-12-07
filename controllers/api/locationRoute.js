@@ -28,9 +28,6 @@ router.post('/', withAuth, async (req, res) => {
     }
 })
 
-// //GETTING ONE ID
-// router.post('/:id',)
-
 
 // Route to search for locations
 router.get('/search', async (req, res) => {

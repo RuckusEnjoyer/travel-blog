@@ -10,21 +10,3 @@
           <p>Comments:</p>
 </section>
 
-    <form class="new-comment-form commentdiv">
-        <div class="form-group">
-            <input type="text" id="comment-content" name="comment-content" class="form-input"/>
-        </div>
-        <button type="submit">Comment</button>
-    </form>
-
-</section>
-
-<section>
-        <div>
-          {{#each blog.comment as |comment|}}
-          {{> comment}}
-          {{/each}}
-        </div>
-</section>
-
-
