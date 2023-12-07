@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel Blog</title>
+    <title>Voyage</title>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
@@ -24,29 +24,28 @@
 <body>
     <nav>
         <div class="container">
-        <h2 class="logo">
-            Voyage
-        </h2>
-        <a href="/" class="button" id="home">Home</a>
-        <a href="/locations" href="/login" class="button" id="location">See Locations</a>
-        <a href="/dashboard"  class="button" id="dashboard">Your dashboard</a>
-<div class="search-bar">
-    <form id="search-form">
-        <input type="search" id="search-input" placeholder="Search for locations...">
-        <button type="submit">Search</button>
-    </form>
-</div>
-
-            {{#if logged_in}}
-            <a id="logout" class="button" href="/">Logout</a>
-            {{else}}
-            <a class="button" href="/login">Login</a>
-            <a class="button" href="/signup">Sign Up</a>
-            {{/if}} 
+            <h2 class="logo">
+                Voyage
+            </h2>
+            <a href="/" class="button" id="home">Home</a>
+            <a href="/locations" class="button" id="location">See Locations</a>
+            <a href="/dashboard" class="button" id="dashboard">Your dashboard</a>
+            <div class="search-bar">
+                <form id="search-form">
+                    <input type="search" id="search-input" placeholder="Search for locations...">
+                    <button id="searchbtn" type="submit">Search</button>
+                </form>
+            </div>
 
 
-
-        </div>
+            <div class="logins">
+                {{#if logged_in}}
+                <a id="logout" class="button" href="/">Logout</a>
+                {{else}}
+                <a class="button" href="/login">Login</a>
+                <a class="button" href="/signup">Sign Up</a>
+                {{/if}} 
+            </div>
         </div>
     </nav>
     <h3 id="error-message"></h3>

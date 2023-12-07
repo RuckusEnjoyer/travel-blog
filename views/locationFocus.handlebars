@@ -3,43 +3,40 @@
 </section>
 <h2 id="error-post-message"></h2>
 <section class="flex center">
-
-{{!--LEFT SIDE: WHERE ALL BLOGS GO: --}}
-<section class="left">
-    <h3 class="card title info" id="post-place"> Memories</h3>
-    {{!-- TO DO: ADD BLOGS FROM GET REQUEST INTO HERE. EACH LOOP --}}
-    {{#each blogs as |blog|}}
-    {{>blog_card}}
-    {{/each}}
-</section>
-
-
-{{!-- RIGHT SIDE: WHERE MAP AND CREATE GOES --}}
-<section class="right">
-    <div class="loc-map card" id="map"></div>
-    {{!-- POSTING A POST --}}
-
-    <form class="blog-form new-blog-form card info">
-        <h3>Share a Memory:</h3>
-    
-      <div class="form-group">
-        <label for="blog-title">Title:</label>
-        {{!-- Dropdown? TO DO: GET REQUEST LOCATIONS TO BLOG! --}}
-        <input class="form-input" type="text" id="blog-title" name="blog-title" />
-      </div>
-{{!-- Input information here --}}
-      <div class="form-group">
-        <label for="blog-content">Your experience:</label>
-        <input class="form-input" id="blog-content" name="blog-content"></textarea>
-      </div>
-      <div class="form-group">
-        {{!-- TO DO: WHEN YOU HIT THIS BUTTON GET REQUEST TO DASHBOARD!! --}}
-        <button type="submit" class=" button btn">Create</button>
-      </div>
-    </form>
-</section>
+  {{!--LEFT SIDE: WHERE ALL BLOGS GO: --}}
+  <section class="left">
+      <h3 class="card title info" id="post-place"> Memories</h3>
+      {{!-- TO DO: ADD BLOGS FROM GET REQUEST INTO HERE. EACH LOOP --}}
+      {{#each blogs as |blog|}}
+      {{>blog_card}}
+      {{/each}}
+  </section>
 
 
+  {{!-- RIGHT SIDE: WHERE MAP AND CREATE GOES --}}
+  <section class="right">
+      <div class="loc-map card" id="map"></div>
+      {{!-- POSTING A POST --}}
+
+      <form class="blog-form new-blog-form card info">
+          <h3>Share a Memory:</h3>
+      
+        <div class="form-group">
+          <label for="blog-title">Title:</label>
+          {{!-- Dropdown? TO DO: GET REQUEST LOCATIONS TO BLOG! --}}
+          <input class="form-input" type="text" id="blog-title" name="blog-title" />
+        </div>
+  {{!-- Input information here --}}
+        <div class="form-group">
+          <label for="blog-content">Your experience:</label>
+          <input class="form-input" id="blog-content" name="blog-content"></textarea>
+        </div>
+        <div class="form-group">
+          {{!-- TO DO: WHEN YOU HIT THIS BUTTON GET REQUEST TO DASHBOARD!! --}}
+          <button type="submit" id="" class="btn ">Create</button>
+        </div>
+      </form>
+  </section>
 </section>
 <script src="/js/blog.js"></script>
 <script src="/js/comment.js"></script>

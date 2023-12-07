@@ -30,7 +30,7 @@
 
 🔍 A Travel Blog made using node.js, express.js, mySQL, Sequelize ORM and handlebars.js that allows users add places they have been and to write about their experiences  
   
-![Travel Blog]()
+![Travel Blog](./public/images/Capture.PNG)
 
 ## User Story
 
@@ -66,14 +66,14 @@ Have a quality README (with unique name, description, technologies used, screens
 
 Dependencies: express, express-handlebars, express-session, mysql2, sequelize, [nodemon](https://www.npmjs.com/package/nodemon), dotenv, connect-session-sequelize, bcrypt, [Esri Leaflet Geocoder](https://www.npmjs.com/package/esri-leaflet-geocoder)
 
-## Usage
+## Dev Usage
 💻   
-  
+
 Run the following command at the root of your project and answer the prompted questions:
 
 `mysql -u root -p`
 
-Enter your password when promted
+Enter your password when prompted
 
 `source db/schema.sql`
 
@@ -81,6 +81,10 @@ Enter your password when promted
 
 `npm start`
 
+## Website Link
+💻
+
+https://guarded-plateau-06638-3f412fce1c4c.herokuapp.com/
 
 ## Contributing
 ✉️ Contact us with any questions ❓: 
