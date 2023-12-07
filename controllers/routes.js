@@ -43,7 +43,7 @@ router.get('/dashboard',withAuth, async (req, res) => {
 })
 //TO DO: GET to an individual Post
 
-router.get('/blog', async (req, res) => {
+router.get('/blog',withAuth, async (req, res) => {
     try{
         const blogData = await Blog.findAll({
             include: [

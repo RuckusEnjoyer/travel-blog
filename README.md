@@ -84,9 +84,12 @@ Enter your password when promted
 
 ## Contributing
 ✉️ Contact us with any questions ❓: 
-:octocat: [Kurtis Pullman](https://github.com/RuckusEnjoyer)
-:octocat: [David Caldarone](https://github.com/caldardn)
-:octocat: [Ava Jamora](https://github.com/afj511)
+
+ [Kurtis Pullman](https://github.com/RuckusEnjoyer)
+
+ [David Caldarone](https://github.com/caldardn)
+ 
+ [Ava Jamora](https://github.com/afj511)
 
 
 

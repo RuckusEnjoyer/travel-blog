@@ -7,7 +7,8 @@ const logoutHandler = async () => {
         console.log(response)
         document.location.replace('/');
     } else {
-        alert('Failed to log out');
+        const errorMessageElement = document.getElementById('error-message');
+        errorMessageElement.textContent = 'Failed to log out';
     }
 }
 

@@ -15,7 +15,8 @@ const loginFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace("/");
     } else {
-      alert("failed to log in");
+      const errorMessageElement = document.getElementById('error-login');
+      errorMessageElement.textContent = 'Username or password is incorrect';
     }
   }
 };
