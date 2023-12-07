@@ -37,27 +37,5 @@ router.post('/', withAuth, async (req, res) => {
     }
 });
 
-// // get comment by id
-// router.get('/:id', async (req, res) => {
-//     try {
-//         const commentData = await Comment.findByPk(req.params.id, {
-//             include: [
-//                 {
-//                     model: User,
-//                     attributes: ['username','id']
-//                 },
-//             ],
-//         });
-
-//         if (!commentData) {
-//             res.status(404).json({ message: 'No comment found with this id!' });
-//             return;
-//         }
-
-//         res.status(200).json(commentData);
-//     } catch (err) {
-//         res.status(500).json(err);
-//     }
-// });
 
 module.exports = router;
