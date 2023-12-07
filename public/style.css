@@ -21,6 +21,10 @@ body{
     color: var(--color-dark);
     background-image: url('/images/img.png');
 }
+.loginlink{
+    color: var(--color-dark);
+    margin: 10px;
+}
 
 .container {
     width: 80%;
