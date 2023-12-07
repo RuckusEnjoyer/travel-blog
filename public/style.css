@@ -71,6 +71,9 @@ nav{
     align-items: center;
     justify-content: space-between;
  }
+ .leaf {
+    color: antiquewhite;
+ }
 
  /* SEARCH BAR IN NAV */
 
@@ -275,7 +278,9 @@ border-radius: 3%;
     text-align: center;
 }
 
-
+.margin{
+    margin: 10px;
+}
 
 /* Blog Card CSS */
 
@@ -302,7 +307,19 @@ border-radius: 3%;
     background-color: var(--color-dark)
 }
 
+.green{
+    background-color: rgb(165, 196, 139)
+}
 
+.location{
+    width: 20vw;
+}
+.w-100{
+    width: 100vw;
+}
+.wrap{
+    flex-wrap: wrap;
+}
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 800px) {
