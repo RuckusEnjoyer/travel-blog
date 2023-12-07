@@ -13,11 +13,16 @@
     list-style: none;
     border: none;
 }
-
-body{
+/*  */
+/* body{
     font-family: 'Poppins', sans-serif;
     color: var(--color-dark);
     background-image: url(https://img.wallpapersafari.com/desktop/728/410/86/73/nv689z.jpg);
+} */
+body{
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-dark);
+    background-image: url('/images/img.png');
 }
 
 .container {
