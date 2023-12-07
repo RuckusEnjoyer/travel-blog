@@ -23,7 +23,8 @@ searchForm.addEventListener('submit', async function(event) {
       // Redirect the user to the location page with the ID in the URL
       window.location.replace(`/locations/${data.id}`);
     } else {
-      alert('No matching locations found.');
+      const errorMessageElement = document.getElementById('error-look');
+      errorMessageElement.textContent = 'Please enter a valid location';
     }
   } catch (error) {
     console.error('Error:', error);
