@@ -172,11 +172,10 @@ border-radius: 3%;
 
 .info{
     background: antiquewhite;
+    border: 1px solid #000;
+    border-radius: 10px;
 }
 
-.signup-form, .login-form, .new-blog-form{
-    padding: 10rem;
-}
 
 
 /* Map CSS !DO NOT TOUCH! */
@@ -186,11 +185,14 @@ border-radius: 3%;
     align-items: center;
     justify-content: center;
     margin: 5vh;
+    
+
 }
 
 .card {
     margin: 10px;
     padding: 10px;
+    border: 1px solid #000;
     border-radius: 10px;
     text-align: center
 }
@@ -200,6 +202,8 @@ border-radius: 3%;
     height: 60vh; 
     Width: 80vw;
     z-index: 0;
+    border: 1px solid #000;
+    border-radius: 10px;
 }
 
 
@@ -223,6 +227,13 @@ border-radius: 3%;
     width: 45vw;
     margin-top: -2vh;
     z-index: 1;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+.boarder{
+    border: 1px solid #000;
+    border-radius: 10px;
 }
 
 .flex{
@@ -257,6 +268,7 @@ border-radius: 3%;
     width: 42vw;
     height: 5vh;
     margin: 15px;
+    border: 1px solid #000;
 }
 #blog-content{
     height: 15vh;
