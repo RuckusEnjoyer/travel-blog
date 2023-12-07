@@ -11,7 +11,12 @@ const newLocation = async (event) => {
         if (response.ok) {
             document.location.replace("/locations");
         } else {
-            alert("Failed to create location");
+            const data = await response.json();
+            if (data.error === 'Location already exists') {
+                const errorMessageElement = document.getElementById('error-location');
+                errorMessageElement.textContent = 'Location already exists';
+                
+            }
         }
     }
 }   
