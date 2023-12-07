@@ -1,5 +1,6 @@
 // Get the search form element
 const searchForm = document.getElementById('search-form');
+const errorId = document.getElementById('error-look');
 
 // Add event listener to the search form
 searchForm.addEventListener('submit', async function(event) {
