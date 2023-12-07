@@ -99,7 +99,7 @@ router.get('/locations/:id', async (req, res) => {
             include: [
                 {
                     model: Blog,
-                    attributes: ['blog_content', 'blog_title', 'user_id'],
+                    attributes: ['blog_content', 'blog_title', 'user_id', 'id'],
                     include: [
                         {
                             model: User,
@@ -120,19 +120,6 @@ router.get('/locations/:id', async (req, res) => {
             ]
         })
         const locBlog = locData.get({ plain : true })
-        // const locationId = req.params.id;
-        // const blogData = await Blog.findAll({
-        //   where: {
-        //     location_id: locationId
-        //   },
-        //   include: [
-        //     {
-        //       model: Comment,
-        //       attributes: ['comment_content', 'user_id']
-        //     }
-        //   ]
-        // });
-        // const blogs = blogData.map((blog) => blog.get({ plain: true }));
        
         res.render('locationFocus', {
             ...locBlog,
